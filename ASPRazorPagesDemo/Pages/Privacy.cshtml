@@ -1,0 +1,21 @@
+﻿@page
+@using EntityFrameworkDemo.Models
+@inject NorthwindContext _db;
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@*asp-page == asp-controller*@
+@*asp-page-handler == asp-action*@
+<a asp-page="Index" asp-page-handler="Test"></a>
+
+@functions
+{
+	void OnGet()
+	{
+
+	}
+}

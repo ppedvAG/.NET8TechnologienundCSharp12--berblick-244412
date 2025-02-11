@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="30"/>
+		</Grid.RowDefinitions>
+		<DataGrid Name="Data"/>
+		<Button Grid.Row="1" Content="Daten laden" Click="Button_Click_1"/>
+	</Grid>
+    <!--<Grid>
+		<Button Content="Button" HorizontalAlignment="Left" Margin="269,346,0,0" VerticalAlignment="Top" Height="56" Width="245" Click="Button_Click"/>
+		<TextBlock HorizontalAlignment="Left" Margin="307,55,0,0" TextWrapping="Wrap" Text="Hallo Welt" VerticalAlignment="Top" Height="52" Width="137" FontSize="30"/>
+		<CheckBox Content="Keine Ahnung" HorizontalAlignment="Left" Margin="51,128,0,0" VerticalAlignment="Top"/>
+		<TextBlock x:Name="CounterText" HorizontalAlignment="Left" Margin="347,157,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+	</Grid>-->
+</Window>

@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "Login Portal";
+}
+
+<h1>Login</h1>
+
+@*WICHTIG: Die Form muss asp-action bekommen, um Benutzername und Passwort ans Backend weiterleiten zu können*@
+@*asp-action kann auch auf den Button gelegt werden, allerdings können dann die Eingabefelder nicht ausgelesen werden*@
+@*Mithilfe des name Attributs auf den Inputfeldern, werden diese ans Backend weitergegeben*@
+<form asp-action="Einloggen">
+	Benutzername:
+	<input type="text" name="username"/> <!--Dieses Feld muss denselben Namen wie der Parameter im Backend haben-->
+	<br/>
+	Passwort:
+	<input type="password" name="passwort"/> <!--Dieses Feld muss denselben Namen wie der Parameter im Backend haben-->
+	<br/>
+	<button type="submit">Einloggen</button>
+</form>

@@ -1,0 +1,14 @@
+﻿@{
+	ViewData["Title"] = "Login Landing Page";
+}
+
+<h1>Login Landing Page</h1>
+
+@if (Model is User u)
+{
+	<h3>Hallo @u.UserName</h3>
+}
+
+@*TagHelper: Routing im Frontend*@
+@*asp-action: Leitet auf eine bestimme Methode weiter (und führt diese aus)*@
+<a asp-action="Login">Login</a>

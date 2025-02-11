@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppDemo.Page2"
+             Title="Page2"
+			 BindingContext="{Binding Source={RelativeSource Self}}">
+	<ScrollView>
+		<VerticalStackLayout Margin="5">
+			<Label Text="Hallo Welt" FontSize="50"
+				   VerticalOptions="Center"
+				   HorizontalOptions="Center"
+				   FontFamily="Comic Mono"
+				   TextColor="Aqua"
+				   x:Name="Textfeld"/>
+
+			<Image Source="ppedv_logo.png" HeightRequest="100" HorizontalOptions="Start"/>
+
+			<Button Text="Hallo Welt" Clicked="Button_Clicked"/>
+
+			<Entry Keyboard="Default" Placeholder="Name eingeben..." x:Name="Eingabefeld"
+				   TextChanged="Eingabefeld_TextChanged"/>
+
+			<Editor Keyboard="Default" Placeholder="Namen eingeben..." x:Name="MehrereNamen"/>
+
+			<SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+
+			<HorizontalStackLayout>
+				<Label Text="Hallo" VerticalOptions="Center" FontSize="20"/>
+				<CheckBox/>
+			</HorizontalStackLayout>
+			<HorizontalStackLayout Spacing="5">
+				<Label Text="Hallo" VerticalOptions="Center" FontSize="20"/>
+				<Switch/>
+			</HorizontalStackLayout>
+
+			<Slider Minimum="0" Maximum="100" Value="25"/>
+			<!--<HorizontalStackLayout Spacing="5">
+				<Stepper Minimum="0" Maximum="100" Value="10" ValueChanged="Stepper_ValueChanged"/>
+				<Label x:Name="StepperValue" VerticalOptions="Center" FontSize="20"/>
+			</HorizontalStackLayout>-->
+
+			<Slider Minimum="0" Maximum="100" Value="{Binding Path=SliderValue}" x:Name="BindingSlider"/>
+			<Label Text="{Binding Source={x:Reference BindingSlider}, Path=Value}" VerticalOptions="Center" FontSize="20"/>
+
+			<ProgressBar Progress="0.3" ProgressColor="Aqua"/>
+			<ActivityIndicator IsRunning="True"/>
+
+			<DatePicker/>
+			<TimePicker/>
+
+			<Picker>
+				<Picker.Items>
+					<x:String>A</x:String>
+					<x:String>B</x:String>
+					<x:String>C</x:String>
+					<x:String>D</x:String>
+				</Picker.Items>
+			</Picker>
+
+			<Picker ItemsSource="{Binding Path=Zahlen}"/>
+
+			<ListView ItemsSource="{Binding Zahlen}"/>
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

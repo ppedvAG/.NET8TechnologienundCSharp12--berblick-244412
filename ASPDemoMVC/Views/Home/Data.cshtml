@@ -1,0 +1,33 @@
+﻿@using EntityFrameworkDemo.Models
+@{
+	ViewData["Title"] = "Daten anzeigen";
+}
+
+<h1>Alle Kunden</h1>
+<table class="table">
+	<thead>
+		<tr>
+			<th>CustomerID</th>
+			<th>CompanyName</th>
+			<th>ContactName</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>Country</th>
+		</tr>
+	</thead>
+	<tbody>
+		@*Für jeden Datensatz im Model eine <tr> erzeugen*@
+		@for (int i = 0; i < Model.Count; i++)
+		{
+			Customer customer = Model[i];
+			<tr class="@(i % 2 == 0 ? "table-primary" : "")">
+				<td>@customer.CustomerId</td>
+				<td>@customer.CompanyName</td>
+				<td>@customer.ContactName</td>
+				<td>@customer.Address</td>
+				<td>@customer.City</td>
+				<td>@customer.Country</td>
+			</tr>
+		}
+	</tbody>
+</table>

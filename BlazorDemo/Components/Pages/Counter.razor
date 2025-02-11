@@ -1,0 +1,35 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+	//Blazor
+	//Alternative zu ASP.NET Core
+	//Im Gegensatz zu ASP.NET Core muss in Blazor kein JavaScript verwendet werden
+	//C# Code wird Clientseitig per WebAssembly deployed
+
+	//WebSocket
+	//In ASP.NET Core wird ein Request-Response Modell verwendet
+	//Request: User sendet einen GET-Request
+	//Response: Antwort HTML, CSS, JS, andere Dateien (z.B. Images)
+	//In Blazor bleibt die Verbindung geöffnet
+	//Vorteil: Server kann selbst Requests initialisieren
+	//Normalerweise, muss der Client selbst Daten anfordern
+
+	//In C# werden WebSockets über die SignalR Bibliothek implementiert
+	//Diese Bibliothek kann auch in anderen Projekten implementiert werden (z.B. WPF, WinForms, MAUI, ...)
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
